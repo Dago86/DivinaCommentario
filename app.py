@@ -17,5 +17,12 @@ def home():
     return "Ok, ci siamo!"
 
 
+'''
+TO-DO USER:
+POST: Register (username, password) - scrive l'istanza sul db
+POST: Auth (username, password) - controlla l'esistenza dell'istanza sul db, restituisce token e refreshtoken utilizzo standard open JWT
+'''
+
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
