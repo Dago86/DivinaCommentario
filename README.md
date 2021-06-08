@@ -1,5 +1,6 @@
 # DivinaCommentario
-Backend di una  web app restful: commentario della Divina Commedia
+Backend di una  web app restful: commentario della Divina Commedia.
+
 Un db contiene i canti della Divina Commedia, divisi per parte (Inferno, Purgatorio, Paradiso) e nome (Canto I, Canto II, etc). Un utente può loggarsi e commentarli col proprio nome utente, previa registrazione sul servizio.
 
 work in progress
