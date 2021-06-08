@@ -3,6 +3,11 @@ Backend di una  web app restful: commentario della Divina Commedia
 
 work in progress
 
+Done:
+Modello User: può registrarsi e autenticarsi
+
+####Testing
+Per utilizzare e testare le chiamate rest del backend si può utilizzare il foglio di Postman caricato nella cartella utils
 
 #### Stack utilizzato
 - Python 3.7.3
