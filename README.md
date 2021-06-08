@@ -6,7 +6,7 @@ work in progress
 Done:
 Modello User: può registrarsi e autenticarsi
 
-####Testing
+#### Testing
 Per utilizzare e testare le chiamate rest del backend si può utilizzare il foglio di Postman caricato nella cartella utils
 
 #### Stack utilizzato
