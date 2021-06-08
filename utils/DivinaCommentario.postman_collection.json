@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "244ff96a-dd59-4df4-bbde-7ee17230c602",
+		"name": "DivinaCommentario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"Filiteri\",\r\n    \"password\":\"pass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Auth",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody)\r",
+											"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"Pluto\",\r\n    \"password\":\"password\"\r\n}"
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYyMzE4NTIzNSwianRpIjoiZTFhYTQ5NDctMjZhMC00MWY0LTlkYzgtNTY5MTcwNjNkZWZkIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOjEsIm5iZiI6MTYyMzE4NTIzNSwiZXhwIjoxNjI1Nzc3MjM1fQ.yBAh5oCZ744RxTia7z5Ciu2jkDjF2d5Ri89tP6tYtnI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/refresh",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
