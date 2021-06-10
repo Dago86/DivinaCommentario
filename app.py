@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 from resources.user import User, UserRegister, UserLogin, TokenRefresh
+from utils.cantigenerator import add_canti_to_db
 from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
@@ -20,6 +21,7 @@ def home():
 @app.before_first_request
 def create_tables():
     db.create_all()
+    add_canti_to_db() #funzione da utilizzare solamente la prima volta che si esegue il server, serve a a popolare il db con i Canti
 
 
 jwt = JWTManager(app)
